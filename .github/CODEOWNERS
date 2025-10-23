@@ -1,0 +1,12 @@
+# CODEOWNERS file for skiduthyrning
+# This file defines who should review pull requests for specific files or directories
+# GitHub will automatically request reviews from these owners
+
+# Global owners - will be requested to review all pull requests
+* @Kodknackarna
+
+# Backend Java code
+/backend/ @Kodknackarna
+
+# Documentation
+*.md @Kodknackarna
