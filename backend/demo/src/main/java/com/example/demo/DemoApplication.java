@@ -1,7 +1,5 @@
 package com.example.demo;
 
-import java.util.Scanner;
-
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
@@ -11,11 +9,6 @@ public class DemoApplication {
 		System.out.println("Hello World!");
 		System.out.println("Hello Sweden!");
 		
-		Scanner scanner = new Scanner(System.in);
-		System.out.print("Ange ditt namn: ");
-		String input = scanner.nextLine();
-		System.out.println("Hej " + input + "!");
-		scanner.close();
 	}
 
 }
