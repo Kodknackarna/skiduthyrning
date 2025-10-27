@@ -9,6 +9,7 @@ public class DemoApplication {
 		System.out.println("Hello World!");
 		System.out.println("Hello Sweden!");
 		
+		System.out.println("Hello India!");
 	}
 
 }
