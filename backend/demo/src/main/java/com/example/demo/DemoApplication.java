@@ -5,6 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 import org.springframework.context.ConfigurableApplicationContext;
 
+import com.example.demo.service.CustomerService;
 import com.example.demo.service.MongoConnectionService;
 
 @SpringBootApplication(exclude = {DataSourceAutoConfiguration.class})
@@ -14,14 +15,13 @@ public class DemoApplication {
 		// Start Spring Boot application
 		ConfigurableApplicationContext context = SpringApplication.run(DemoApplication.class, args);
 		
-		// Print messages after Spring Boot starts
-		System.out.println("Hello World!");
-		System.out.println("Hello Sweden!");
-		System.out.println("Hello India!");
-		
 		// Test MongoDB connection
 		MongoConnectionService mongoService = context.getBean(MongoConnectionService.class);
 		mongoService.testConnection();
+		
+		// Visa alla kunder från MongoDB
+		CustomerService customerService = context.getBean(CustomerService.class);
+		customerService.printAllCustomers();
 	}
 
 }
