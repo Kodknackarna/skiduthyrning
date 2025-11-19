@@ -75,20 +75,19 @@ public class DemoApplication {
 		customerService.createCustomer(newCustomer);
 		System.out.println("Ny kund tillagd: " + firstName + " " + lastName);
 		
-		
 		// update existing customer
 		System.out.println("\nUppdatera kund.");
 		System.out.print("Ange email för kunden som ska uppdateras: ");
-		String emailToUpdate = scanner.nextLine();
-		Customer customerToUpdate = customerService.findByEmail(emailToUpdate);
-		if (customerToUpdate != null) {
+		String updateEmail = scanner.nextLine();
+		Customer updateCustomer = customerService.findByEmail(updateEmail);
+		if (updateCustomer != null) {
 			System.out.print("Nytt telefonnummer: ");
 			String newPhoneNumber = scanner.nextLine();
-			customerToUpdate.setPhoneNumber(newPhoneNumber);
-			customerService.updateCustomer(customerToUpdate);
-			System.out.println("Kund uppdaterad: " + customerToUpdate.getFirstName() + " " + customerToUpdate.getLastName());
+			updateCustomer.setPhoneNumber(newPhoneNumber);
+			customerService.updateCustomer(updateCustomer);
+			System.out.println("Kund uppdaterad: " + updateCustomer.getFirstName() + " " + updateCustomer.getLastName());
 		} else {
-			System.out.println("Ingen kund hittades med email: " + emailToUpdate);
+			System.out.println("Ingen kund hittades med email: " + updateEmail);
 		}
 
 		// Stäng scanner när vi är klara
@@ -96,7 +95,6 @@ public class DemoApplication {
 
 		// Visa alla kunder från MongoDB
 		customerService.printAllCustomers();
-		
 	}
 
 }
