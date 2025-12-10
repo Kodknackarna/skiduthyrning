@@ -1,12 +1,12 @@
 import './App.css'
-import { ShowCustomers } from './Components/showCustomers'
+import { AddCustomer } from './Components/addCustomer'
 
 function App() {
 
   return (
     <>
       <h1>Skiduthyrning</h1>
-      <ShowCustomers />
+      <AddCustomer />
     </>
   )
 }
