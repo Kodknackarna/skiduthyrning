@@ -6,7 +6,7 @@ const api = axios.create({
     baseURL: 'http://localhost:8080/api'
 });
 
-export function AddCustomer() {
+export default function AddCustomer() {
     const [firstName, setFirstName] = useState('');
     const [lastName, setLastName] = useState('');
     const [email, setEmail] = useState('');
